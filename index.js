@@ -22,6 +22,6 @@ module.exports = function folders(dir, tasks){
 			return done();
 		}
 
-		return es.merge.apply(null, streams);
+		es.merge.apply(null, streams).on('end', done);
 	};
 };
